@@ -46,8 +46,8 @@ const Home = () => {
     <div className="home-container">
       <Header />
       <main className="main-content">
-        <h2>Ask Your Question</h2>
-        <p>Enter your question below and get an answer from our AI-powered backend.</p>
+        <h2>어떤 주제의 뉴스를 알고 싶으신가요?</h2>
+        <p>아래에 관심있는 분야의 뉴스 정보를 물어보면 챗봇이 요약해서 전달해줍니다!</p>
 
         {/* 질문 입력 폼 */}
         <form className="question-form" onSubmit={handleSubmit}>
@@ -55,14 +55,14 @@ const Home = () => {
             type="text"
             value={question}
             onChange={(e) => setQuestion(e.target.value)}
-            placeholder="Type your question here..."
+            placeholder="여기에 질문을 입력하세요"
             className="question-input"
           />
-          <button type="submit" className="submit-btn">Submit</button>
+          <button type="submit" className="submit-btn">제출</button>
         </form>
 
         {/* 로딩 메시지 */}
-        {loading && <p className="loading-message">Fetching answer...</p>}
+        {loading && <p className="loading-message">로딩 중입니다...</p>}
 
         {/* 에러 메시지 */}
         {error && <p className="error-message">{error}</p>}
