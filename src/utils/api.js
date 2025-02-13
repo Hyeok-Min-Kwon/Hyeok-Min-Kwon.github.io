@@ -5,12 +5,7 @@ export const askQuestion = async (question) => {
     const response = await axios.post(
       "http://4.217.250.8080/api/ask", 
       { question },
-      {
-        headers: {
-          "Content-Type" : "application/json"
-        },
-        withCredentials : true
-    }
+    
   );
     return response.data.answer;
   } catch (error) {
