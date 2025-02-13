@@ -3,19 +3,19 @@ import axios from 'axios';
 export const askQuestion = async (question) => {
   try {
     const response = await axios.post(
-      "https://4.217.250:8080/api/ask", 
+      "http://4.217.250.63:8080/api/ask", 
       { question },
       {
         headers: {
-          "Content-Type" : "application/json"
+          "Content-Type": "application/json"
         },
-        withCredentials : true
-    },
-    {timeout : 50000}
-  );
+        withCredentials: true,
+        timeout: 30000
+      }
+    );
     return response.data.answer;
   } catch (error) {
-    console.error("Axios Error", error);
+    console.error("Axios Error", error.response ? error.response.data : error.message);
     throw new Error('Error fetching answer');
   }
 };
